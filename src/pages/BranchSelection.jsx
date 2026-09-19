@@ -11,13 +11,29 @@ function BranchSelection() {
 
       {/* Header */}
       <div className="mx-auto max-w-6xl">
-        <button
-          onClick={() => navigate("/")}
-          className="mb-12 text-sm text-white/70 transition hover:text-white"
-        >
-          ← Back to Home
-        </button>
 
+        {/* Top Bar */}
+        <div className="mb-12 flex items-center justify-between gap-4">
+
+          <button
+            onClick={() => navigate("/")}
+            className="text-sm text-white/70 transition hover:text-white"
+          >
+            ← Back to Home
+          </button>
+
+          <a
+            href="https://www.instagram.com/lokeshreddy700232?stkn=MWI1cnl6anp3NjV1Yg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 px-4 py-2 text-xs font-semibold text-white shadow-lg transition duration-300 hover:scale-105 sm:px-5 sm:py-2.5 sm:text-sm"
+          >
+            Connect on Instagram
+          </a>
+
+        </div>
+
+        {/* Page Heading */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Choose Your Branch

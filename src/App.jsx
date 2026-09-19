@@ -89,6 +89,14 @@ function Home() {
             >
               Notes
             </a>
+            <a
+            href="https://www.instagram.com/lokeshreddy700232?stkn=MWI1cnl6anp3NjV1Yg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 px-4 py-2 text-xs font-semibold text-white shadow-lg transition duration-300 hover:scale-105 sm:px-5 sm:py-2.5 sm:text-sm"
+          >
+            Connect on Instagram
+          </a>
           </div>
         </nav>
       </header>

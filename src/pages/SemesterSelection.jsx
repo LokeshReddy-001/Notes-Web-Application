@@ -25,12 +25,28 @@ function SemesterSelection() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 px-6 py-16 text-white">
       <div className="mx-auto max-w-5xl">
-        <button
-          onClick={() => navigate("/branches")}
-          className="mb-8 rounded-full border border-white/30 px-5 py-2 hover:bg-white hover:text-gray-900"
-        >
-          ← Back
-        </button>
+
+  {/* Top Bar */}
+  <div className="mb-12 flex items-center justify-between gap-4">
+
+    <button
+      onClick={() => navigate("/branches")}
+      className="rounded-full border border-white/30 px-5 py-2 text-sm transition hover:bg-white hover:text-gray-900"
+    >
+      ← Back
+    </button>
+
+    <a
+      href="https://www.instagram.com/lokeshreddy700232?stkn=MWI1cnl6anp3NjV1Yg=="
+      target="_blank"
+      rel="noopener noreferrer"
+      className="rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 px-4 py-2 text-xs font-semibold text-white shadow-lg transition duration-300 hover:scale-105 sm:px-5 sm:py-2.5 sm:text-sm"
+    >
+      Connect on Instagram
+    </a>
+
+  </div>
+        
 
         <h1 className="mb-12 text-center text-4xl font-bold uppercase">
           {branch} - Select Semester
