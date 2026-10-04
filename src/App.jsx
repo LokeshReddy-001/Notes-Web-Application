@@ -16,6 +16,7 @@ import BEE from "./pages/subjects/BEE";
 import EDCAD from "./pages/subjects/EDCAD";
 import DS from "./pages/subjects/DS";
 import M2 from "./pages/subjects/M2";
+import DBMS from "./pages/subjects/DBMS";
 const CLOUDS = CLOUDSModule.default ?? CLOUDSModule;
 
 function Home() {
@@ -176,6 +177,7 @@ function App() {
       <Route path="/subject/edcad" element={<EDCAD />} />
       <Route path="/subject/ds" element={<DS />} />
       <Route path="/subject/m2" element={<M2 />} />
+      <Route path="/subject/dbms" element={<DBMS />} />
     </Routes>
   );
 }

@@ -5,14 +5,17 @@ const subjects = {
   cse: {
     1: ["CHEMISTRY", "EDC", "M1", "PPS"],
     2: ["AEP", "BEE", "EDCAD", "DS", "M2"],
+    3: ["DBMS","OOPS","SE","DM","COA","IE"],
   },
   csm: {
     1: ["AEP", "BEE", "EDCAD", "M1", "PPS"],
     2: ["CHEMISTRY", "EDC", "DS", "M2"],
+    3: ["MSF","OOPS","COA","SE","DBMS"]
   },
   ece: {
     1: ["AEP", "BEE", "EDCAD", "M1", "PPS"],
     2: ["CHEMISTRY", "DS", "M2"],
+    3: ["Probability Theory and Stochastic Processes ","EDC","Signals and Systems","Digital Logic Design ","Control Systems","Innovation and Entrepreneurship "]
   },
 };
 
@@ -85,7 +88,9 @@ function SemesterSelection() {
                       navigate("/subject/ds");
                     } else if (subject === "M2") {
                       navigate("/subject/m2");
-                    } else {
+                    } else if (subject === "DBMS") {
+                      navigate("/subject/dbms");
+                    }else {
                       navigate(`/branch/${branch}/semester/${semester}`);
                     }
                   }}

@@ -3,6 +3,12 @@ import SubjectPage from "../SubjectPage";
 import { FileText, FileType } from "lucide-react";
 const resources = [
   {
+    title: "MID-1 2026",
+    type: "PDF",
+    category: "Examination",
+    url: "https://drive.google.com/file/d/1gyuZuSmbRQ1cBf3cHmVZh8yUwmzj8tcd/view?usp=drive_link",
+  },
+  {
     title: "Unit 1",
     type: "PDF",
     category: "Unit 1",
