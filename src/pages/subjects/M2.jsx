@@ -72,7 +72,7 @@ function ODEVC() {
             {filteredResources.map((resource) => (
             <div
                 key={resource.title}
-                className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-sky-400/60 hover:bg-white/[0.12] hover:shadow-[0_0_30px_rgba(56,189,248,0.15)]"
+                className="group relative flex h-full min-h-52 flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-sky-400/60 hover:bg-white/[0.12] hover:shadow-[0_0_30px_rgba(56,189,248,0.15)]"
             >
                 <div className="mb-4 flex items-center gap-3">
                     {resource.type === "PDF" ? (
@@ -94,7 +94,7 @@ function ODEVC() {
                 {resource.title}
                 </h3>
 
-                <span className="mt-2 inline-block self-start rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium text-sky-300">
+                <span className="absolute right-5 top-5 inline-block rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium text-sky-300">
                 {resource.category}
                 </span>
 
@@ -102,7 +102,7 @@ function ODEVC() {
                     href={resource.url || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 ml-0 inline-block rounded-full bg-white px-5 py-2 text-sm font-semibold text-gray-900 transition duration-300 hover:scale-105 hover:bg-sky-300"
+                    className="mt-auto ml-0 inline-block self-start rounded-full bg-white px-5 py-2 text-sm font-semibold text-gray-900 transition duration-300 hover:scale-105 hover:bg-sky-300"
                     >
                     Open Resource →
                 </a>

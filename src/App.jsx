@@ -1,8 +1,6 @@
-import { useEffect, useRef } from "react";
-import CLOUDSModule from "vanta/dist/vanta.clouds.min";
-import * as THREE from "three";
+import { useEffect, useRef, useState } from "react";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import BranchSelection from "./pages/BranchSelection";
 import SemesterSelection from "./pages/SemesterSelection";
@@ -17,18 +15,23 @@ import EDCAD from "./pages/subjects/EDCAD";
 import DS from "./pages/subjects/DS";
 import M2 from "./pages/subjects/M2";
 import DBMS from "./pages/subjects/DBMS";
-const CLOUDS = CLOUDSModule.default ?? CLOUDSModule;
-
+import BranchSubject from "./pages/BranchSubject";
 function Home() {
+  const navigate = useNavigate();
+  const [showLinkedInPrompt, setShowLinkedInPrompt] = useState(false);
   const vantaRef = useRef(null);
   const vantaEffect = useRef(null);
 
   useEffect(() => {
     if (!vantaRef.current) return;
+    const birds = window.VANTA?.BIRDS;
+    const three = window.THREE;
+    if (!birds || !three) return;
 
-    vantaEffect.current = CLOUDS({
+    try {
+      vantaEffect.current = birds({
       el: vantaRef.current,
-      THREE: THREE,
+      THREE: three,
 
       mouseControls: true,
       touchControls: true,
@@ -37,13 +40,13 @@ function Home() {
       minHeight: 200.0,
       minWidth: 200.0,
 
-      backgroundColor: 0x000000,
-      skyColor: 0x5ca6ca,
-      cloudColor: 0x334d80,
-      lightColor: 0xffffff,
-
-      speed: 1,
-    });
+      scale: 1.0,
+      scaleMobile: 1.0,
+      backgroundColor: 0x152331,
+      });
+    } catch (error) {
+      console.error("Unable to start the landing page background animation:", error);
+    }
 
     return () => {
       if (vantaEffect.current) {
@@ -55,13 +58,15 @@ function Home() {
   // Change the website name here
   const websiteName = "Baby Bullet";
 
-  // Change this URL to your actual Notes website
-  const NOTES_URL = "https://example.com";
+  const continueToNotes = () => {
+    setShowLinkedInPrompt(false);
+    navigate("/branches");
+  };
 
   return (
     <div
       ref={vantaRef}
-      className="relative min-h-screen overflow-hidden bg-[#fefbeb]"
+      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#152331] via-[#0b141d] to-black"
     >
       {/* Navigation Bar */}
       <header className="absolute top-0 left-0 z-20 w-full">
@@ -84,12 +89,12 @@ function Home() {
               Home
             </a>
 
-            <a
-              href="/branches"
+            <button
+              onClick={() => setShowLinkedInPrompt(true)}
               className="text-sm font-medium text-white transition-opacity hover:opacity-70 sm:text-base"
             >
               Notes
-            </a>
+            </button>
             <a
             href="https://www.instagram.com/lokeshreddy700232?stkn=MWI1cnl6anp3NjV1Yg=="
             target="_blank"
@@ -121,26 +126,13 @@ function Home() {
             </p>
 
             <div className="mt-8">
-              <a
-                href="/branches"
+              <button
+                onClick={() => setShowLinkedInPrompt(true)}
                 className="inline-flex rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-gray-900 shadow-lg transition-transform hover:scale-105 sm:text-base"
               >
                 Explore Notes
                 <span className="ml-2">→</span>
-              </a>
-            </div>
-            
-            {/* LinkedIn Profile */}
-            <div className="mt-5">
-            <a
-                href="https://www.linkedin.com/in/lokesh-reddy-b7b0a6381/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:text-gray-900 sm:text-base"
-            >
-                <span>Follow me on LinkedIn</span>
-                <span>↗</span>
-            </a>
+              </button>
             </div>
 
           </div>
@@ -153,6 +145,44 @@ function Home() {
           Learn. Build. Grow.
         </p>
       </div>
+
+      {showLinkedInPrompt && (
+        <div
+          className="fixed inset-0 z-30 flex items-center justify-center bg-slate-950/75 px-5 py-8 backdrop-blur-sm"
+          onClick={continueToNotes}
+        >
+          <section
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="linkedin-prompt-title"
+            className="relative w-full max-w-md rounded-3xl border border-white/15 bg-slate-900 p-8 text-center text-white shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              aria-label="Close and continue to notes"
+              onClick={continueToNotes}
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-2xl leading-none text-white/60 transition hover:bg-white/10 hover:text-white"
+            >
+              ×
+            </button>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">Before you explore</p>
+            <h2 id="linkedin-prompt-title" className="mt-3 text-3xl font-bold">Follow me on LinkedIn</h2>
+            <p className="mt-3 text-white/65">Connect with me and keep up with what I’m building.</p>
+            <div className="mt-7 flex justify-center">
+              <a
+                href="https://www.linkedin.com/in/lokesh-reddy-b7b0a6381/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={continueToNotes}
+                className="inline-flex items-center gap-2 rounded-full bg-sky-300 px-6 py-3 font-semibold text-slate-950 transition hover:bg-sky-200"
+              >
+                Follow on LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 }
@@ -166,6 +196,10 @@ function App() {
       <Route
         path="/branch/:branch/semester/:semester"
         element={<SemesterPage />}
+      />
+      <Route
+        path="/branch/:branch/semester/:semester/subject/:subject"
+        element={<BranchSubject />}
       />
 
       <Route path="/subject/m1" element={<M1 />} />

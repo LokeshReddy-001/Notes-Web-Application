@@ -1,6 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 function SubjectPage({ subjectName, children }) {
   const navigate = useNavigate();
+  const { branch, semester } = useParams();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#152331] via-[#0b141d] to-black px-6 py-16 text-white">
@@ -12,7 +13,7 @@ function SubjectPage({ subjectName, children }) {
         ← Back
         </button>
         <p className="text-sm uppercase tracking-widest text-white/60">
-          Study Resources
+          {branch && semester ? `${branch.toUpperCase()} · Semester ${semester}` : "Study Resources"}
         </p>
 
         <h1 className="mt-3 text-4xl font-bold sm:text-5xl">

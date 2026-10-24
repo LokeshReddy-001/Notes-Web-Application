@@ -1,32 +1,30 @@
 
 import { useNavigate, useParams } from "react-router-dom";
+import cse from "../data/branches/cse/index.js";
+import csm from "../data/branches/csm/index.js";
+import ece from "../data/branches/ece/index.js";
 
-const subjects = {
-  cse: {
-    1: ["CHEMISTRY", "EDC", "M1", "PPS"],
-    2: ["AEP", "BEE", "EDCAD", "DS", "M2"],
-    3: ["DBMS","OOPS","SE","DM","COA","IE"],
-  },
-  csm: {
-    1: ["AEP", "BEE", "EDCAD", "M1", "PPS"],
-    2: ["CHEMISTRY", "EDC", "DS", "M2"],
-    3: ["MSF","OOPS","COA","SE","DBMS"]
-  },
-  ece: {
-    1: ["AEP", "BEE", "EDCAD", "M1", "PPS"],
-    2: ["CHEMISTRY", "DS", "M2"],
-    3: ["Probability Theory and Stochastic Processes ","EDC","Signals and Systems","Digital Logic Design ","Control Systems","Innovation and Entrepreneurship "]
-  },
-};
+const branches = { cse, csm, ece };
 
 function SemesterSelection() {
   const navigate = useNavigate();
   const { branch } = useParams();
 
-  const branchSubjects = subjects[branch];
+  const branchData = branches[branch?.toLowerCase()];
+
+  if (!branchData) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-slate-950 px-6 text-center text-white">
+        <div>
+          <h1 className="text-3xl font-bold">Branch not found</h1>
+          <button onClick={() => navigate("/branches")} className="mt-6 rounded-full bg-white px-5 py-2 text-slate-900">Choose a branch</button>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 px-6 py-16 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#152331] via-[#0b141d] to-black px-6 py-16 text-white">
       <div className="mx-auto max-w-5xl">
 
   {/* Top Bar */}
@@ -52,54 +50,22 @@ function SemesterSelection() {
         
 
         <h1 className="mb-12 text-center text-4xl font-bold uppercase">
-          {branch} - Select Semester
+          {branchData.name} - Select Semester
         </h1>
 
         <div className="grid gap-8 sm:grid-cols-2">
-          {[1, 2].map((semester) => (
+          {Object.keys(branchData.semesters).map((semester) => (
             <div
               key={semester}
               className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-md"
             >
-              <h2 className="mb-5 text-2xl font-bold">
-                Semester {semester}
-              </h2>
-
-              <div className="space-y-3">
-                {branchSubjects[semester].map((subject) => (
-                  <button
-                    key={subject}
-                    onClick={() => {
-                    if (subject === "M1") {
-                      navigate("/subject/m1");
-                    } else if (subject === "EDC") {
-                      navigate("/subject/edc");
-                    } else if (subject === "CHEMISTRY") {
-                      navigate("/subject/chemistry");
-                    } else if (subject === "PPS") {
-                      navigate("/subject/pps");
-                    } else if (subject === "AEP") {
-                      navigate("/subject/aep");
-                    } else if (subject === "BEE") {
-                      navigate("/subject/bee");
-                    } else if (subject === "EDCAD") {
-                      navigate("/subject/edcad");
-                    } else if (subject === "DS") {
-                      navigate("/subject/ds");
-                    } else if (subject === "M2") {
-                      navigate("/subject/m2");
-                    } else if (subject === "DBMS") {
-                      navigate("/subject/dbms");
-                    }else {
-                      navigate(`/branch/${branch}/semester/${semester}`);
-                    }
-                  }}
-                    className="w-full rounded-xl bg-white/10 px-4 py-3 text-left font-medium transition hover:bg-white hover:text-gray-900"
-                  >
-                    {subject}
-                  </button>
-                ))}
-              </div>
+              <button
+                onClick={() => navigate(`/branch/${branch}/semester/${semester}`)}
+                className="w-full rounded-xl bg-white/[0.06] p-8 text-left transition-colors duration-200 hover:bg-white/[0.1]"
+              >
+                <h2 className="text-2xl font-bold">Semester {semester}</h2>
+                <p className="mt-3 text-sm text-white/60">Choose semester →</p>
+              </button>
             </div>
           ))}
         </div>

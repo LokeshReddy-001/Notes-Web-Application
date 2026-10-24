@@ -7,7 +7,7 @@ function BranchSelection() {
   const branches = ["CSE", "CSM", "ECE"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 px-6 py-12 text-white sm:px-10">
+    <div className="min-h-screen bg-gradient-to-br from-[#152331] via-[#0b141d] to-black px-6 py-12 text-white sm:px-10">
 
       {/* Header */}
       <div className="mx-auto max-w-6xl">
