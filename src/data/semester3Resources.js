@@ -54,7 +54,7 @@ export const semester3Resources = {
     { title: "Unit 4", category: "Unit 4", url: driveFile("1EgLh2fXyIDRW_ejU1ah2wywfC85zJVYG") },
     { title: "Unit 5", category: "Unit 5", url: driveFile("1b2xzlTS15atfh1OMm1DcGXlKrmbyJSvq") },
   ],
-  IE: [{ title: "Unit 1", category: "Unit 1", url: driveFolder("1s1A6qBCkT21dRotlIuTI92VQSVJ5xuLM") }],
+  IE: [{ title: "All Notes", category: "All Notes", url: driveFolder("1s1A6qBCkT21dRotlIuTI92VQSVJ5xuLM") }],
   JAVA: units([
     "1FMkeX82c46oprnYGtcjUTpDdTNIRXV8V",
     "1__a0K-BdnJrpHbVweeixq_fHNgRFIqbH",
