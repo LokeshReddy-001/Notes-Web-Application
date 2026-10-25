@@ -1,28 +1,36 @@
 # Baby Bullet Notes
 
-The notes catalog follows this route structure:
+Baby Bullet is a React, Vite, Tailwind CSS, and React Router site for browsing course notes.
 
-`Landing page → LinkedIn prompt → Branches → Semester selection → Subject selection → Subject notes`
+## Academic catalog
 
-Each branch has its own folder and catalog file in `src/data/branches/` (`cse/index.js`, `csm/index.js`, `ece/index.js`). A catalog's `semesters` object lists the subjects shown under each semester. To add a semester, add a numbered entry with its subject names. The semester page renders every semester found in that branch file automatically.
+The catalog data lives under `src/data/`:
 
-The landing page uses Trebuchet MS for headings and Arial for body text. Choosing Explore Notes opens the LinkedIn prompt; either following or closing the prompt continues to the branch list. The semester page contains only semester choices, and selecting one opens the subjects page in the same tab.
+- `branches.js` defines stable branch IDs and labels.
+- `semesters.js` defines stable semester IDs and the branch-to-subject membership relation.
+- `subjects.js` defines stable subject IDs and display metadata.
+- `resources.js` stores each Google Drive resource once, keyed by a stable resource ID, and maps subject IDs to resource IDs.
 
-Semester 3 Google Drive links are in `src/data/semester3Resources.js`; links are listed in Unit 1–5 order. COA's PYQ folder is listed separately. Resource type is inferred from the link (`/folders/` for Drive folders, Google Docs URLs for documents, and other Drive file URLs for PDFs). Add a subject's resource list there and list that subject in only the branch catalogs where it belongs. The subject route displays the matching resources through `src/pages/BranchSubject.jsx` and `src/pages/LinkedSubject.jsx`.
+Adding a subject requires a subject record and an ID in the relevant branch/semester relation. Adding or changing a link is a data-only update in `resources.js`. Resource type is inferred from the URL. Keep external links on HTTPS and use the supported Google Drive or Google Docs URL forms.
 
-The old Vite starter notes below are retained for reference.
+## Routes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The canonical hierarchy is:
 
-Currently, two official plugins are available:
+`/branches/:branchId/semesters/:semesterId/subjects/:subjectId`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Route definitions are in `src/app/routes.jsx`; URL generation is in `src/utils/academicPaths.js`. The old `/branch/...` and `/subject/...` URLs redirect to canonical routes. Vercel rewrites nested URLs to the app entry point so direct navigation and refresh continue to work.
 
-## React Compiler
+## Project layout
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/app/`: application entry and route definitions.
+- `src/components/academic/`: reusable branch, semester, subject, and resource cards/lists.
+- `src/components/common/` and `src/components/layout/`: empty/not-found states and breadcrumbs.
+- `src/pages/`: landing, catalog, and subject pages.
+- `src/utils/`: route generation and resource URL helpers.
 
-## Expanding the ESLint configuration
+The Vanta Birds animation remains scoped to the landing page and uses a static dark background when its scripts or WebGL are unavailable.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Validation
+
+Run `npm run lint` and `npm run build` from the project root.
