@@ -9,13 +9,12 @@ export const subjects = [
   { id: "ds", code: "DS", title: "Data Structures (DS)" },
   { id: "m2", code: "M2", title: "Ordinary Differential Equations and Vector Calculus (ODEVC)" },
   { id: "dbms", code: "DBMS", title: "Database Management System (DBMS)" },
-  { id: "oops", code: "OOPS", title: "Object Oriented Programming" },
   { id: "se", code: "SE", title: "Software Engineering (SE)" },
   { id: "dm", code: "DM", title: "Discrete Mathematics (DM)" },
   { id: "coa", code: "COA", title: "Computer Organization and Architecture (COA)" },
   { id: "ie", code: "IE", title: "IE" },
   { id: "es", code: "ES", title: "ES" },
-  { id: "java", code: "JAVA", title: "JAVA", legacyNames: ["OOPS / JAVA"] },
+  { id: "java", code: "JAVA", title: "JAVA" },
   { id: "msf", code: "MSF", title: "MSF" },
 ];
 
