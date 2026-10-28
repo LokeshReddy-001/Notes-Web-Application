@@ -196,62 +196,6 @@ export const resourcesById = {
     "category": "Unit 5",
     "url": "https://drive.google.com/file/d/1bmlfP9VIufyk4VmK5yRRmpgazE3VxzPc/view?usp=sharing"
   },
-  "file-1a8MmJDB_8aujCPl73fnmElkwj3uBFFiT": {
-    "id": "file-1a8MmJDB_8aujCPl73fnmElkwj3uBFFiT",
-    "title": "Unit 1-A",
-    "type": "PDF",
-    "category": "Unit 1",
-    "url": "https://drive.google.com/file/d/1a8MmJDB_8aujCPl73fnmElkwj3uBFFiT/view?usp=sharing"
-  },
-  "file-1_-db43IM0ezHtfgdg5Ye105R_s6svMFs": {
-    "id": "file-1_-db43IM0ezHtfgdg5Ye105R_s6svMFs",
-    "title": "Unit 1-B",
-    "type": "PDF",
-    "category": "Unit 1",
-    "url": "https://drive.google.com/file/d/1_-db43IM0ezHtfgdg5Ye105R_s6svMFs/view?usp=sharing"
-  },
-  "file-1tUjBkPDLnjN1cmRPBGK8xnJ3ViNDPfPc": {
-    "id": "file-1tUjBkPDLnjN1cmRPBGK8xnJ3ViNDPfPc",
-    "title": "Unit 1-C",
-    "type": "PDF",
-    "category": "Unit 1",
-    "url": "https://drive.google.com/file/d/1tUjBkPDLnjN1cmRPBGK8xnJ3ViNDPfPc/view?usp=sharing"
-  },
-  "file-1ccobVZw_5YVqOAAhFerFpKhfM3YxXAqZ": {
-    "id": "file-1ccobVZw_5YVqOAAhFerFpKhfM3YxXAqZ",
-    "title": "Unit 2-A",
-    "type": "PDF",
-    "category": "Unit 2",
-    "url": "https://drive.google.com/file/d/1ccobVZw_5YVqOAAhFerFpKhfM3YxXAqZ/view?usp=sharing"
-  },
-  "file-1tUlxrfTMawJgPASbyRWfqZyf_k9Mr3q-": {
-    "id": "file-1tUlxrfTMawJgPASbyRWfqZyf_k9Mr3q-",
-    "title": "Unit 2-B",
-    "type": "PDF",
-    "category": "Unit 2",
-    "url": "https://drive.google.com/file/d/1tUlxrfTMawJgPASbyRWfqZyf_k9Mr3q-/view?usp=drive_link"
-  },
-  "file-1cT1yvShh3WEWoSIWUeu6riCND6Vc8QSW": {
-    "id": "file-1cT1yvShh3WEWoSIWUeu6riCND6Vc8QSW",
-    "title": "Unit 2-C",
-    "type": "PDF",
-    "category": "Unit 2",
-    "url": "https://drive.google.com/file/d/1cT1yvShh3WEWoSIWUeu6riCND6Vc8QSW/view?usp=sharing"
-  },
-  "doc-1ww_2NLaYFrlSPTDi6TlBCz_rte--3Q5bfoNJ6cYLTl8": {
-    "id": "doc-1ww_2NLaYFrlSPTDi6TlBCz_rte--3Q5bfoNJ6cYLTl8",
-    "title": "Unit 1",
-    "type": "DOC",
-    "category": "Unit 1",
-    "url": "https://docs.google.com/document/d/1ww_2NLaYFrlSPTDi6TlBCz_rte--3Q5bfoNJ6cYLTl8/edit?usp=sharing"
-  },
-  "doc-13N6XAu4UxovGdgVyE-3KGZiQFb13Zd0YVMjo0khjth8": {
-    "id": "doc-13N6XAu4UxovGdgVyE-3KGZiQFb13Zd0YVMjo0khjth8",
-    "title": "Unit 2",
-    "type": "DOC",
-    "category": "Unit 2",
-    "url": "https://docs.google.com/document/d/13N6XAu4UxovGdgVyE-3KGZiQFb13Zd0YVMjo0khjth8/edit?usp=sharing"
-  },
   "folder-1frS3w5_29jarZUcqkKx9sgmQYkVBdjgc": {
     "id": "folder-1frS3w5_29jarZUcqkKx9sgmQYkVBdjgc",
     "title": "Unit 1",
@@ -266,12 +210,12 @@ export const resourcesById = {
     "category": "Unit 2",
     "url": "https://drive.google.com/drive/folders/1ewzSjcMlCZ0b0JV0u45VdGoAUMz0-xFy?usp=drive_link"
   },
-  "file-13t2GtrhbIwqZgwCvtPIm5JyZa8yccLyE": {
-    "id": "file-13t2GtrhbIwqZgwCvtPIm5JyZa8yccLyE",
+  "folder-1JBrzXUdvJNPBRvM97qoOFMPSeRqcNdAC": {
+    "id": "folder-1JBrzXUdvJNPBRvM97qoOFMPSeRqcNdAC",
     "title": "Unit 3",
-    "type": "PDF",
+    "type": "FOLDER",
     "category": "Unit 3",
-    "url": "https://drive.google.com/file/d/13t2GtrhbIwqZgwCvtPIm5JyZa8yccLyE/view?usp=drive_link"
+    "url": "https://drive.google.com/drive/folders/1JBrzXUdvJNPBRvM97qoOFMPSeRqcNdAC?usp=drive_link"
   },
   "folder-1EzUHDaEAI2A_bOM76vk8pRYi3H-1SnK2": {
     "id": "folder-1EzUHDaEAI2A_bOM76vk8pRYi3H-1SnK2",
@@ -843,17 +787,9 @@ export const resourceIdsBySubjectId = {
     "file-1bmlfP9VIufyk4VmK5yRRmpgazE3VxzPc"
   ],
   "dbms": [
-    "file-1a8MmJDB_8aujCPl73fnmElkwj3uBFFiT",
-    "file-1_-db43IM0ezHtfgdg5Ye105R_s6svMFs",
-    "file-1tUjBkPDLnjN1cmRPBGK8xnJ3ViNDPfPc",
-    "file-1ccobVZw_5YVqOAAhFerFpKhfM3YxXAqZ",
-    "file-1tUlxrfTMawJgPASbyRWfqZyf_k9Mr3q-",
-    "file-1cT1yvShh3WEWoSIWUeu6riCND6Vc8QSW",
-    "doc-1ww_2NLaYFrlSPTDi6TlBCz_rte--3Q5bfoNJ6cYLTl8",
-    "doc-13N6XAu4UxovGdgVyE-3KGZiQFb13Zd0YVMjo0khjth8",
     "folder-1frS3w5_29jarZUcqkKx9sgmQYkVBdjgc",
     "folder-1ewzSjcMlCZ0b0JV0u45VdGoAUMz0-xFy",
-    "file-13t2GtrhbIwqZgwCvtPIm5JyZa8yccLyE",
+    "folder-1JBrzXUdvJNPBRvM97qoOFMPSeRqcNdAC",
     "folder-1EzUHDaEAI2A_bOM76vk8pRYi3H-1SnK2",
     "folder-1CR9ryC1Ok_EtE6OM-3309QCnQrA1s5w9"
   ],
